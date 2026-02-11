@@ -1,0 +1,49 @@
+body{
+ background: repeating-linear-gradient(90deg, lawngreen,white 30px);
+ display: flex;
+ text-align:center;
+ justify-content: center;
+ align-items: center;
+}
+
+h1{
+ background-color: black;
+ color:whitesmoke;
+}
+
+div {
+ display: block;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ background-color: cyan;
+ border: 3px solid black;
+ border-radius: 20px;
+ width: 500px;
+ height: fit-content;
+ text-align:center;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+}
+
+input{
+ border-radius: 5px;
+ align-items: center;
+}
+
+button{
+ background-color: black;
+ border-radius: 5px;
+ width: 100px;
+ color: white;
+}
+
+a{
+ color:white;
+}
+
+textarea,select{
+ border-radius: 10px;
+ text-align: center;
+ width: fit-content;
+}
