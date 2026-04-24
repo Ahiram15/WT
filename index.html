@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Banking App</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:420px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+button,
+input[type=submit]{
+    width:95%;
+    padding:12px;
+    margin-top:10px;
+    background:#333;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover,
+input[type=submit]:hover{
+    background:#004d99;
+}
+
+#transfer{
+    display:none;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    text-align:left;
+    margin-left:5%;
+    margin-top:8px;
+}
+</style>
+
+<script>
+function login()
+{
+    var u=document.getElementById("u").value;
+    var p=document.getElementById("p").value;
+
+    if(u=="admin" && p=="123")
+    {
+        document.getElementById("login").style.display="none";
+        document.getElementById("transfer").style.display="block";
+    }
+    else
+    {
+        alert("Invalid Login");
+    }
+}
+
+function checkData()
+{
+    return confirm("Please recheck transaction details. Continue?");
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Login Section -->
+<div id="login">
+<h2>Bank Login</h2>
+
+<label>Username</label>
+<input type="text" id="u" placeholder="Enter Username">
+
+<label>Password</label>
+<input type="password" id="p" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+</div>
+
+
+<!-- Transfer Section -->
+<div id="transfer">
+<h2>Money Transfer</h2>
+
+<form action="TransferServlet" method="post"
+onsubmit="return checkData()">
+
+<label>From Account Number</label>
+<input type="text" name="fromacc" placeholder="Enter From Account No">
+
+<label>To Account Number</label>
+<input type="text" name="toacc" placeholder="Enter To Account No">
+
+<label>IFSC Code</label>
+<input type="text" name="ifsc" placeholder="Enter IFSC Code">
+
+<label>Amount</label>
+<input type="text" name="amount" placeholder="Enter Amount">
+
+<input type="submit" value="Transfer">
+
+</form>
+</div>
+
+</div>
+
+</body>
+</html>
